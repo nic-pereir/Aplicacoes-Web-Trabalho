@@ -8,12 +8,13 @@
 </head>
 <body>
     <header>
-        <a href="#" class="header-title">Nicolly Pereira</a>
+        <a href="#about-me" class="header-title">Nicolly Pereira</a>
+        <button class="menu-toggle">☰</button>
         <ul class="nav-list">
-            <li><a href="#" class="nav-link">Sobre Mim</a></li>
-            <li><a href="#" class="nav-link">Formação</a></li>
-            <li><a href="#" class="nav-link">Portfólio</a></li>
-            <li><a href="#" class="nav-link">Contato</a></li>
+            <li><a href="#about-me" class="nav-link">Sobre Mim</a></li>
+            <li><a href="#formation" class="nav-link">Formação</a></li>
+            <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
+            <li><a href="#contact" class="nav-link">Contato</a></li>
         </ul>
     </header>
     <main>
@@ -26,7 +27,6 @@
                 <p>Essa base inicial me incentivou a mudar de cidade e iniciar os estudos no curso e, atualmente, estou desenvolvendo o meu primeiro portfólio profissional. Os meus projetos se baseiam em colocar em prática o máximo do meu aprendizado, sempre pensando em como a tecnologia pode facilitar a vida das pessoas.</p>
                 <p>Vamos networkar?</p>
             </div>
-            
         </section>
 
         <section id="formation">
@@ -102,6 +102,11 @@
                     <h2>Página de Cadastro Responsiva</h2>
                     <p>Esse projeto foi desenvolvido no início dos meus estudos em Front-End, feito em 2022, após as </p>
                 </div>
+                <div class="container-projects">
+                    <img src="images/cadastro-image.png" alt="cadastro-image">
+                    <h2>Página de Cadastro Responsiva</h2>
+                    <p>Esse projeto foi desenvolvido no início dos meus estudos em Front-End, feito em 2022, após as </p>
+                </div>
             </div>
         </section>
 
@@ -109,25 +114,61 @@
             <h1 class="contact-title">Entre em contato</h1>
             <p>Estou aberta a oportunidades, projetos e colaborações.
             <br>Sinta-se à vontade para entrar em contato.</p>
-            <form id="form-contact">
-                <div class="form-name">
-                    <label for="full-name">Nome</label>
-                    <input type="text" name="full-name" id="full-name">
+            <form action="" id="form">
+                <div class="input-container">
+                    <div class="input-box">
+                        <label for="name" class="form-name">
+                            Nome
+                        </label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" name="name" id="name" class="form-control">
+                    </div>
+                    <span class="error"></span>
                 </div>
-                <div class="form-email">
-                    <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email">
+
+                <div class="input-container">
+                    <div class="input-box">
+                        <label for="email" class="form-email">
+                            Email
+                        </label>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" name="email" id="email" class="form-control">
+                    </div>
+                    <span class="error"></span>
                 </div>
-                <div class="form-topic">
-                    <label for="topic">Assunto</label>
-                    <input type="text" name="topic" id="topic">
+
+                <div class="input-container full">
+                    <div class="input-box">
+                        <label for="assunto" class="form-assunto">
+                            Assunto
+                        </label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" name="assunto" id="assunto" class="form-control">
+                    </div>
+                    <span class="error"></span>
                 </div>
-                <div class="form-menssage">
-                    <label for="message">Mensagem</label>
-                    <input type="text" name="message" id="message">
+
+                <div class="input-container full">
+                    <div class="input-box">
+                        <label for="mensagem" class="form-mensagem">
+                            Mensagem
+                        </label>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" name="mensagem" id="mensagem" class="form-control">
+                    </div>
+                    <span class="error"></span>
                 </div>
+
+                <input type="submit" name="enviar" id="enviar" value="Enviar">
+
+                <span class="validated"></span>
             </form>
         </section>
     </main>
+    <script src="js/script.js"></script>
 </body>
 </html>
