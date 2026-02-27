@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Hind+Madurai:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
+html{
+    scroll-behavior: smooth;
+}
+
+#about-me, #formation, #portfolio, #contact {
+    scroll-margin-top: 20px; /* Ajuste conforme a altura do seu header */
+}
+
+:root{
 /* === COLORS === */
     --primary-color: #3965d9;
     --secondary-color: #351f35;
@@ -39,7 +46,7 @@ body{
 
 header{
     background-color: var(--back-color);
-    padding: 20px 10px;
+    padding: 20px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -73,6 +80,12 @@ header a{
     font-family: "Montserrat", sans-serif;
 }
 
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+}
 
 /*-- MAIN --*/
 
@@ -96,13 +109,12 @@ header a{
     font-size: 20px;
 }
 
-
-
 /*-- FORMATION --*/
 
 #formation{
     width: 70%;
     margin: auto;
+    background-color: var(--back-color);
 }
 
 #formation h1{
@@ -113,7 +125,7 @@ header a{
 .timeline{
     position: relative;
     max-width: 1200px;
-    margin: 100px auto;
+    margin: 40px auto;
 }
 
 .container{
@@ -152,7 +164,7 @@ header a{
 
 .text-box{
     padding: 20px 30px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     position: relative;
     border-radius: 6px;
     font-size: 15px;
@@ -184,7 +196,7 @@ header a{
     position: absolute;
     width: 6px;
     height: 100%;
-    background-color: #351f35;
+    background-color: var(--back-color);
     top: 0;
     left: 50%;
     margin-left: -3px;
@@ -226,6 +238,134 @@ header a{
     left: -15px;
 }
 
+/*-- PROJECTS --*/
+#portfolio{
+    width: 70%;
+    margin: auto;
+    background-color: var(--back-color);
+    transition: all 0.3s ease;
+}
+
+#portfolio h1{
+    font-size: 50px;
+}
+
+.container-all{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--back-color);
+    margin-top: 30px;
+    gap: 30px;
+}
+
+.container-projects{
+    flex: 1 1 calc(50% - 30px);
+    max-width: calc(50% - 30px);
+    background-color: var(--white-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.container-projects img{
+    width: 100%; 
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/*-- FORM --*/
+
+#contact{
+    width: 70%;
+    margin: auto;
+    padding: 10px;
+    background-color: var(--back-color);
+    transition: all 0.3s ease;
+    margin-top: 50px;
+}
+
+#contact h1{
+    font-size: 50px;
+}
+
+#contact p{
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+#form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    background-color: aquamarine;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #c36441;
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+#assunto {
+    grid-column: span 2;
+    background-color: rgb(94, 105, 114);
+}
+
+.input-container:nth-child(3) {
+    grid-column: span 2;
+    background-color: rgb(133, 173, 206);
+}
+
+.input-container:nth-child(4) {
+    grid-column: span 2;
+    background-color: rgb(56, 76, 92);
+}
+
+#enviar {
+    grid-column: 1 / -1;
+}
+
+
+@media (max-width: 800px){
+
+    .menu-toggle{
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-list{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 200px;
+        padding: 20px;
+        height: 100vw;
+        backdrop-filter: blur(10px);
+        box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+    }
+
+    .nav-list li{
+        margin-bottom: 25px;
+    }
+
+    .nav-list.active{
+        display: flex;
+    }
+}
+
 @media screen and (max-width: 600px){
     .timeline{
         margin: 50px auto;
@@ -257,17 +397,28 @@ header a{
     }
 }
 
-
-
-
-
-
-
-.container-all{
-    display: flex; 
-    flex-direction: row;
+@media (max-width: 900px){
+    .container-all{
+        gap: 20px;
+    }
+    
+    .container-projects{
+        flex: 0 1 100%;
+        max-width: 350px; 
+        padding: 15px;
+    }
+    
+    .container-projects h2{
+        font-size: 16px;
+    }
+    
+    .container-projects p{
+        font-size: 13px;
+    }
 }
 
-.container-projects img{
-    width: 400px;
+@media (max-width: 500px){
+   #form {
+    grid-template-columns: 1fr;
+}
 }
