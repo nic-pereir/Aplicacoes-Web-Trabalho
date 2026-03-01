@@ -303,39 +303,66 @@ header a{
 #form{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 20px;
-    background-color: aquamarine;
+    background-color: var(--back-color);
+    margin-top: 50px;
 }
 
-.input-container {
-    display: flex;
-    flex-direction: column;
-    background-color: #c36441;
+.input-container{
+    text-align: center;
+    padding: 20px;
 }
 
-.full {
-    grid-column: 1 / -1;
+.input-container:nth-child(1){
+    grid-column: span 1;
+    background-color: var(--back-color);
 }
 
-#assunto {
+.input-container:nth-child(2){
+    grid-column: span 1;
+    background-color: var(--back-color);
+}
+
+.input-container:nth-child(3){
     grid-column: span 2;
-    background-color: rgb(94, 105, 114);
+    background-color: var(--back-color);
 }
 
-.input-container:nth-child(3) {
+.input-container:nth-child(4){
     grid-column: span 2;
-    background-color: rgb(133, 173, 206);
-}
-
-.input-container:nth-child(4) {
-    grid-column: span 2;
-    background-color: rgb(56, 76, 92);
+    background-color: var(--back-color);
 }
 
 #enviar {
     grid-column: 1 / -1;
 }
 
+.input-box{
+    margin-bottom: 10px;
+    font-family: var(--text-font);
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+.input-field input{
+    width: 400px;
+    background-color: #351f35;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+/*-- RESPONSIVENESS --*/
 
 @media (max-width: 800px){
 
@@ -415,10 +442,18 @@ header a{
     .container-projects p{
         font-size: 13px;
     }
+    .input-container:nth-child(1){
+    grid-column: span 2;
+    background-color: rgb(73, 58, 58);
+    }
+    .input-container:nth-child(2){
+    grid-column: span 2;
+    background-color: rgb(190, 190, 190);
+    }
 }
 
 @media (max-width: 500px){
-   #form {
-    grid-template-columns: 1fr;
-}
+   #form{
+        grid-template-columns: 1fr;
+    }
 }
