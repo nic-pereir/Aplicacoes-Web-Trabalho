@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Hind+Madurai:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Hind+Madurai:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 *{
     margin: 0;
@@ -26,6 +26,7 @@ html{
 /* === FONT === */
     --title-font: "Cinzel", serif;
     --text-font: "Montserrat", sans-serif;
+    --form-font: "Lato", sans-serif;
 }
 
 h1, h2{
@@ -304,14 +305,21 @@ header a{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 20px;
     background-color: var(--back-color);
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .input-container{
     text-align: center;
     padding: 20px;
+    margin-bottom: 16px;
+}
+
+.input-container .error{
+    font-size: 15px;
+    font-family: var(--text-font);
+    color: red;
+    font-weight: 500;
 }
 
 .input-container:nth-child(1){
@@ -336,22 +344,60 @@ header a{
 
 #enviar {
     grid-column: 1 / -1;
+    padding: 10px;
+    border-radius: 10px;
+    width: 40%;
+    cursor: pointer;
+    justify-self: center;
+    font-size: 20px;
+    margin-bottom: 20px;
 }
 
 .input-box{
     margin-bottom: 10px;
-    font-family: var(--text-font);
+    font-family: var(--form-font);
     font-weight: 500;
     letter-spacing: 3px;
 }
 
-.input-field input{
-    width: 400px;
-    background-color: #351f35;
+.input-container:nth-child(3) .input-field input{
+    width: 100%;
+}
+.input-container:nth-child(4) .input-field textarea{
+    width: 100%;
+    margin-bottom: 10px;
+    font-family: var(--form-font);
+    background-color: var(--back-color);
     padding: 10px;
-    border-radius: 8px;
-    color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
     font-size: 20px;
+    box-shadow: 0px 0px 50px -16px rgba(53,31,53,0.5);
+    color: #351f35;
+    resize: none;
+}
+
+.input-field input{
+    width: 100%;
+    background-color: var(--back-color);
+    padding: 10px;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    box-shadow: 0px 0px 50px -16px rgba(53,31,53,0.5);
+    color: #351f35;
+    margin-bottom: 10px;
+    font-family: var(--form-font);
+}
+
+.validated{
+    grid-column: 1 / -1;
+    justify-self: center;
+    font-size: 20px;
+    font-family: var(--form-font);
+    color: green;
+    font-weight: 500;
 }
 
 
