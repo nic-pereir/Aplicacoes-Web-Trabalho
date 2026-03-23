@@ -527,11 +527,9 @@ footer{
     }
     .input-container:nth-child(1){
     grid-column: span 2;
-    background-color: rgb(73, 58, 58);
     }
     .input-container:nth-child(2){
     grid-column: span 2;
-    background-color: rgb(190, 190, 190);
     }
 }
 
