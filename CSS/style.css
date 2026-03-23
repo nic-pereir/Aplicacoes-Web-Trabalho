@@ -32,6 +32,7 @@ html{
 h1, h2{
     font-family: var(--title-font);
     font-weight: 500;
+    color: #351f35;
 }
 
 p{
@@ -79,6 +80,13 @@ header a{
 
 .nav-list li a{
     font-family: "Montserrat", sans-serif;
+    padding: 8px;
+}
+
+.nav-list li a:hover{
+    color: #351f35;
+    background-color: #3965d9;
+    border-radius: 8px;
 }
 
 .menu-toggle {
@@ -257,7 +265,6 @@ header a{
     justify-content: center;
     background-color: var(--back-color);
     margin-top: 30px;
-    gap: 30px;
 }
 
 .container-projects{
@@ -279,6 +286,25 @@ header a{
     height: auto;
     border-radius: 8px;
     margin-bottom: 15px;
+}
+
+.container-projects h2, .container-projects p{
+    margin-bottom: 20px;
+}
+
+.container-projects a{
+    padding: 10px;
+    background-color: #351f35;
+    border-radius: 8px;
+    color: #F8F9FA;
+    text-decoration: none;
+    font-family: var(--form-font);
+    font-size: 18px;
+}
+
+.container-projects a:hover{
+    background-color: #3965d9;
+    color: #351f35;
 }
 
 /*-- FORM --*/
@@ -351,6 +377,17 @@ header a{
     justify-self: center;
     font-size: 20px;
     margin-bottom: 20px;
+    background-color: #351f35;
+    color: #F8F9FA;
+    border-color: #351f35;
+    font-family: var(--form-font);
+    border: none;
+}
+
+#enviar:hover{
+    color: #351f35;
+    background-color: #3965d9;
+    border-radius: 8px;
 }
 
 .input-box{
@@ -400,12 +437,12 @@ header a{
     font-weight: 500;
 }
 
-
-
-
-
-
-
+footer{
+    height: 100%;
+    padding: 15px;
+    background-color: #b4b4b4;
+    text-align: center;
+}
 
 
 /*-- RESPONSIVENESS --*/
